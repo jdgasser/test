@@ -6,6 +6,7 @@ ssh-add /root/key_rsa
 rm -rf /root/key_rsa
 	
 #Git en master
+mkdir /home/server_suivi
 cd /home/server_suivi
 git init
 git pull ssh://git@10.1.152.219:10022/InformationSystemNetworkandCloud/Network-system/Suivi_etudiant/suivi_etudiant.git
