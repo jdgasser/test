@@ -14,3 +14,4 @@ git pull ssh://git@10.1.152.219:10022/InformationSystemNetworkandCloud/Network-s
 sh /home/server_suivi/install/install.sh
 
 rm -rf /root/script.sh
+touch /root/script.sh
