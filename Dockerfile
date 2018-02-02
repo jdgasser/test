@@ -1,9 +1,6 @@
 ﻿FROM ubuntu:16.04
 MAINTAINER Jean-Daniel Gasser <jean-daniel.gasser@altran.com>
 
-# Setup environment
-
-
 # Update sources
 RUN apt-get update -y
 
