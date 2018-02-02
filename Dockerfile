@@ -43,6 +43,7 @@ RUN mkdir -p /root/.ssh && touch /root/.ssh/known_hosts && chmod 700 /root/.ssh
 ADD known_hosts /root/.ssh/known_hosts
 
 #install le nécessaire pour le déploiement continu sous rancher
+RUN apt-get install -y python-setuptools
 ADD rancher/ /rancher-gitlab-deploy
 WORKDIR /rancher-gitlab-deploy
 RUN python /rancher-gitlab-deploy/setup.py install
