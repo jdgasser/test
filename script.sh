@@ -11,7 +11,7 @@ cd $HOME_GIT
 git init
 git pull $URL_GIT
 
-sh /root/install.sh
+sh $HOME_GIT/install/install.sh
 
 rm -rf /root/script.sh
 touch /root/script.sh
