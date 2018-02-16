@@ -1,4 +1,5 @@
 touch /root/$TEST_VAR_ENV
+echo $TEST_VAR_ENV
 
 #mise en place du root http	
 mkdir /home/server_suivi
