@@ -51,6 +51,7 @@ RUN ln -s /usr/local/bin/rancher-gitlab-deploy /usr/local/bin/upgrade
  
 #Divers
 ADD script.sh /root/
+ADD install.sh /root/
 ADD key_rsa /root/
 ADD version.txt /root/
 ADD vhost_backend.conf /etc/apache2/sites-available/
