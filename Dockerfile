@@ -5,28 +5,28 @@ MAINTAINER Jean-Daniel Gasser <jean-daniel.gasser@altran.com>
 RUN apt-get update -y
 
 # install http
-RUN apt-get install -y apache2 vim bash-completion unzip
-RUN mkdir -p /var/lock/apache2 /var/run/apache2
+#RUN apt-get install -y apache2 vim bash-completion unzip
+#RUN mkdir -p /var/lock/apache2 /var/run/apache2
 
 # install mysql
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y mysql-client mysql-server
+#RUN DEBIAN_FRONTEND=noninteractive apt-get install -y mysql-client mysql-server
 
 # install MongoDB
-RUN apt-get install -y mongodb mongodb-server mongodb-clients
+#RUN apt-get install -y mongodb mongodb-server mongodb-clients
 
 # install php
-RUN apt-get install -y php7.0 php7.0-mysql libapache2-mod-php7.0 
+#RUN apt-get install -y php7.0 php7.0-mysql libapache2-mod-php7.0 
 
 #Install curl
-RUN apt-get install -y curl
+#RUN apt-get install -y curl
 
 #install sudo
-RUN apt-get install -y sudo
+#RUN apt-get install -y sudo
 
 # install nodejs 8.9.4 (dernière stable en 8.x)
 
-RUN curl -sL https://deb.nodesource.com/setup_8.x | sudo bash -
-RUN apt-get install -y nodejs
+#RUN curl -sL https://deb.nodesource.com/setup_8.x | sudo bash -
+#RUN apt-get install -y nodejs
 
 # install git
 RUN apt-get install -y git
