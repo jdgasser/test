@@ -12,6 +12,7 @@ RUN mkdir -p /var/lock/apache2 /var/run/apache2
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y mysql-client mysql-server
 
 # install MongoDB
+RUN mkdir -p /data/db
 RUN apt-get install -y mongodb mongodb-server mongodb-clients
 
 # install php
@@ -23,10 +24,19 @@ RUN apt-get install -y curl
 #install sudo
 RUN apt-get install -y sudo
 
+#install net-tools (netstat/ifconfig etc)
+RUN apt-get install -y net-tools
+
 # install nodejs 8.9.4 (dernière stable en 8.x)
 
 RUN curl -sL https://deb.nodesource.com/setup_8.x | sudo bash -
 RUN apt-get install -y nodejs
+RUN npm install rxjs
+RUN npm install zone.js
+RUN npm install -g @angular/core --unsafe
+RUN npm install angular2-collapsible
+RUN npm install -g @angular/cli --unsafe
+
 
 # install git
 RUN apt-get install -y git
@@ -48,12 +58,16 @@ ADD rancher/ /rancher-gitlab-deploy
 WORKDIR /rancher-gitlab-deploy
 RUN python /rancher-gitlab-deploy/setup.py install
 RUN ln -s /usr/local/bin/rancher-gitlab-deploy /usr/local/bin/upgrade
- 
+
+#install phpmyadmin
+RUN apt-get install -y dbconfig-common dbconfig-mysql fontconfig-config fonts-dejavu-core javascript-common libfontconfig1 libfreetype6 libgd3 libjbig0 libjpeg-turbo8 libjpeg8 libjs-jquery libjs-sphinxdoc libjs-underscore libmcrypt4 libpng12-0 libtiff5 libvpx3 libxpm4 libxslt1.1 php-gd php-gettext php-mbstring php-mcrypt php-pear php-phpseclib php-tcpdf php-xml php7.0-gd php7.0-mbstring php7.0-mcrypt php7.0-xml
+
 #Divers
 ADD script.sh /root/
 ADD key_rsa /root/
 ADD version.txt /root/
 ADD vhost_backend.conf /etc/apache2/sites-available/
+ADD .bashrc /root/
 EXPOSE 22 80 8080 3306
 
 #pour démarer les services et concerver le containeur ouvert
