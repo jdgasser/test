@@ -31,10 +31,6 @@ RUN apt-get install -y net-tools
 
 RUN curl -sL https://deb.nodesource.com/setup_8.x | sudo bash -
 RUN apt-get install -y nodejs
-RUN npm install rxjs
-RUN npm install zone.js
-RUN npm install -g @angular/core --unsafe
-RUN npm install angular2-collapsible
 RUN npm install -g @angular/cli --unsafe
 
 
